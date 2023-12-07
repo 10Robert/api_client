@@ -15,6 +15,6 @@ class ClientesViewSet(viewsets.ModelViewSet):
     filterset_fields = ['ativo']
 
     
-    @method_decorator(cache_page(60 * 2))
+    @method_decorator(cache_page(60))
     def dispatch(self, *args, **kwargs):
         return super(ClientesViewSet, self).dispatch(*args, **kwargs)
