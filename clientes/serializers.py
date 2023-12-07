@@ -5,7 +5,7 @@ from clientes.validators import *
 class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
-        fields = '__all__'
+        fields = ['nome', 'email', 'cpf', 'rg', 'celular', 'ativo', 'foto']
     
     def validate(self, data):
         if not cpf_valido(data['cpf']):
