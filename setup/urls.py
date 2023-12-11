@@ -21,8 +21,9 @@ from clientes.views import ClientesViewSet
 from django.conf.urls.static import static
 from django.conf import settings
 
-router = routers.DefaultRouter()
-router.register('clientes', ClientesViewSet)
+router = routers.DefaultRouter(trailing_slash=False)
+
+router.register('clientes', ClientesViewSet, basename='Cliente',)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
